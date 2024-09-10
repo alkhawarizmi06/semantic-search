@@ -1,0 +1,7 @@
+beautifulsoup4
+requests
+pysolr
+sentence-transformers
+lxml
+html5lib
+

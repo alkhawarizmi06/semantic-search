@@ -1,0 +1,3 @@
+https://www.public.fr/sitemap_index.xml
+https://www.public.fr/sitemap-news.xml
+https://vsd.fr/sitemap_index.xml

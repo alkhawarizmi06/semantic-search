@@ -1,0 +1,51 @@
+version: "3.8"
+services:
+  solr:
+    image: solr:9-slim
+    container_name: solr
+    ports:
+     - "8983:8983"
+    networks:
+      - my_network
+    volumes:
+      - ./solr:/var/solr
+    command:
+      - solr-precreate
+      - demo
+  etl:
+    build: ./etl
+    container_name: etl
+    networks:
+      - my_network
+    depends_on:
+      - solr
+    volumes:g
+      - ./etl:/usr/src/app
+    environment:
+      - SOLR_URL=http://solr:8983/solr/demo
+      - DATA=PROD
+
+  backend:
+    build: ./backend
+    container_name: backend
+    ports:
+      - "5001:5000"
+    networks:
+      - my_network
+    depends_on:
+      - solr
+    environment:
+      - SOLR_URL=http://solr:8983/solr/demo
+    volumes:
+      - ./backend:/usr/src/app
+
+  react_frontend:
+    build: ./frontend
+    container_name: react_frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+networks:
+  my_network:
+

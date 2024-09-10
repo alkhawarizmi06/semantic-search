@@ -1,0 +1,4 @@
+Flask
+pysolr
+sentence-transformers
+flask-cors
