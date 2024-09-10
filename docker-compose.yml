@@ -23,7 +23,7 @@ services:
       - ./etl:/usr/src/app
     environment:
       - SOLR_URL=http://solr:8983/solr/demo
-      - DATA=PROD
+      - DATA=TEST
 
   backend:
     build: ./backend
