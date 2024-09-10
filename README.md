@@ -18,6 +18,16 @@ After running the command, give it a few moments for the following services to s
 - Flask server
 - Initialization script execution
 
+You can check if the system is ready by executing the following command:
+
+tail etl/app.log | grep __main__
+
+You should see the following result when you run the application with TEST mode 
+
+2024-09-10 17:16:22,709 - __main__ - INFO - main.py - init - test data embedding took  --- 4.717212677001953 seconds ---
+
+For the PROD mode, the embedding step will take a long time (even if multiple CPUs are used). In this case, you can start testing queries while the script runs. 
+
 Once everything is ready, open your browser and navigate to:
 
 http://localhost:3000
