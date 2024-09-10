@@ -19,7 +19,7 @@ services:
       - my_network
     depends_on:
       - solr
-    volumes:g
+    volumes:
       - ./etl:/usr/src/app
     environment:
       - SOLR_URL=http://solr:8983/solr/demo
