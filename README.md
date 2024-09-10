@@ -54,9 +54,9 @@ PROD:
 
 - Reads sitemap files from a resource file.
 - Launches a pipeline that:
-- Extracts URLs from the sitemap.
-- Downloads content from each URL.
-- Creates a document for each URL.
-- Indexes each document using a transformer library and Solr.
+  - Extracts URLs from the sitemap.
+  - Downloads content from each URL.
+  - Creates a document for each URL.
+  - Indexes each document using a transformer library and Solr.
 
 This mode is suitable for larger datasets and production use cases.
