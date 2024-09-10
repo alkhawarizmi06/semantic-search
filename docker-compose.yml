@@ -40,7 +40,7 @@ services:
       - ./backend:/usr/src/app
 
   react_frontend:
-    build: ./frontend
+    build: ./frontend-app
     container_name: react_frontend
     ports:
       - "3000:3000"
